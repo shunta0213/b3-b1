@@ -1,0 +1,27 @@
+\subsection{課題1}
+
+ある一つの粒子について、原点を適当に定め座標を5秒ごとに記録した結果を表\ref{tab:position}に示す。
+なお、座標の有効数字はソフトウェア上では\SI{1}{\nano\meter}のオーダーまで計測できていたが、光学顕微鏡の分解能はおおよそ光の波長程度であり、\SI{10}{\nano\meter}のオーダーを四捨五入し、\SI{100}{\nano\meter}のオーダーにした。
+また、表\ref{tab:position}の$x_m$と$y_m$は、\SI{10}{\micro\meter}ごとに線が切られたマイクロメーターをソフトウェア上で5回計測した結果が表\ref{tab:micrometer}で、その平均が\SI{10.04}{\micro\meter}であったから、$x_m = x \times \dfrac{10}{10.04}$と$y_m = y \times \dfrac{10}{10.04}$として校正した値である。
+$\Delta x_m$、$\Delta y_m$はそれぞれ$x_m$、$y_m$の差分である。
+この $\Delta x_m$、$\Delta y_m$についてヒストグラムを作成すると、図\ref{fig:delta-x-y-histogram}のようになる。
+
+\begin{longtable} {c}
+    \caption{\SI{10}{\micro\meter}のソフトウェア上での計測結果} \label{tab:micrometer} \\
+    \hline 距離 $d$ /\SI{}{\micro\meter}                                   \\ \hline
+    \endfirsthead
+
+    \hline
+    \endlastfoot
+    9.9                                                                  \\
+    9.9                                                                  \\
+    10                                                                   \\
+    10.2                                                                 \\
+    10.2                                                                 \\
+\end{longtable}
+
+\newpage
+\input{src/tables/position-table.tex}
+
+\newpage
+\input{src/figures/delta-x-y-histogram/delta-x-y-histogram.tex}

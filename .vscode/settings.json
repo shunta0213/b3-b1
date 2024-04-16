@@ -22,12 +22,16 @@
   "latex-workshop.latex.recipe.default": "lualatex",
   "latex-workshop.bibtex-format.sort.enabled": true,
   "latex-workshop.bibtex-format.align-equal.enabled": true,
-  "latex-workshop.latex.autoClean.run": "onBuilt",
-  "latex-workshop.latex.clean.subfolder.enabled": true,
+  // "latex-workshop.latex.autoClean.run": "onBuilt",
+  // "latex-workshop.latex.clean.subfolder.enabled": true,
   "latex-workshop.latex.recipes": [
     {
       "name": "lualatex",
       "tools": ["lualatex"]
+    },
+    {
+      "name": "lualatex -> biber -> lualatex*2",
+      "tools": ["lualatex", "biber", "lualatex", "lualatex"]
     }
   ],
   "latex-workshop.latex.outDir": "%DIR%/dist",
@@ -44,6 +48,11 @@
         "-output-directory=%OUTDIR%",
         "%DOC%"
       ]
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": ["-output-directory=%OUTDIR%", "%DOCFILE%"]
     }
   ]
 }

@@ -1,0 +1,44 @@
+\subsection{課題2}
+
+表\ref{tab:position}をもとに、
+$x_m$の分散$\ev{(x_m-\ev{x_m})^2}=\ev{(\Delta x_m)^2}$、
+$y_m$の分散$\ev{(y_m-\ev{y_m})^2}=\ev{(\Delta y_m)^2}$、
+移動量$\sqrt{(\Delta x_m)^2 + (\Delta y_m)^2}$の分散、$\ev{(\Delta x_m)^2 + (\Delta y_m)^2}$を求めると、
+次の表\ref{tab:position-variance}のようになる。
+
+\input{src/tables/position-vairance.tex}
+
+ブラウン運動の力学的な考察から、
+\begin{equation}\label{eq:brownian-motion}
+    \ev{(\Delta x_m)^2} = \dfrac{kT}{3\pi a \eta} t = \dfrac{RT}{3 \pi a \eta N_A} t
+\end{equation}
+が成り立つ。
+ここで、$k$はボルツマン定数、$T$は温度、$a$は粒子の半径、$\eta$は溶媒の粘度、$R$は気体定数、$N_A$はアボガドロ数である。
+理科年表\cite{rika-nenpyo}によると、
+室温は$T=\SI{299.35}{\kelvin}$、
+粒子半径は$a=\SI{1.50}{\micro\meter}$、
+気体定数は$R=\SI{8.3144598}{\joule\per\kelvin\per\mole}$
+である。
+$\eta$は水の粘度であるが、次の表\ref{tab:water-viscosity}のようになる。
+指数関数でフィッティングすると、
+次の\ref{eq:water-viscosity}式のようになりこれをもとに室温\SI{26.6}{\celsius}で水の粘度は\SI{0.84965}{\milli\pascal\second}であると考えられる。
+\begin{equation}\label{eq:water-viscosity}
+    \eta = 1.7599 \times \exp(-0.027793T) \si{\milli\pascal\second}
+\end{equation}
+
+\input{src/tables/water-viscosity.tex}
+
+以上を踏まえて、アボガドロ定数、ボルツマン定数を計算すると以下のようになる。
+\begin{align}
+    k_{x_m} & = \dfrac{\ev{(\Delta x_m)^2} \cdot 3 \pi a \eta}{tT}                                                                                                            \nonumber          \\
+            & = \dfrac{\SI{3.86}{\micro\meter\squared} \cdot 3 \pi \cdot \SI{1.50}{\micro\meter} \cdot \SI{0.84965}{\milli\pascal\second}}{\SI{5}{\second} \cdot \SI{299.35}{\kelvin}} \nonumber \\
+            & = \SI{3.10E-23}{\joule\per\kelvin}                                                                                                                                                 \\
+    k_{y_m} & = \SI{2.03E-23}{\joule\per\kelvin}
+\end{align}
+\begin{align}
+    N_{x_m} & = \dfrac{R}{k_{x_m}} = \dfrac{\SI{8.3144598}{\joule\per\kelvin\per\mole}}{\SI{3.10E-23}{\joule\per\kelvin}} \nonumber \\
+            & = \SI{2.68E23}{\per\mole}                                                                                             \\
+    N_{y_m} & = \SI{4.09E23}{\per\mole}
+\end{align}
+
+なお、文献値は$N_A=\SI{6.02214076E23}{\per\mole}$、$k=\SI{1.38064852E-23}{\joule\per\kelvin}$である。

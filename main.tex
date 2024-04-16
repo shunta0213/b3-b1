@@ -5,17 +5,19 @@
 % titlepage
 \usepackage{src/styles/titlepage/exp_1}
 
-\title{My {\LaTeX} Template}
-\author{shunta0213}
+% biblatex
+\addbibresource{src/reference.bib}
 
-\title{実験テーマ: ここに実験テーマを入力}
-\author{実験者: 実験者名 \\ 共同実験者: 共同実験者名}
+\title{My {\LaTeX} Template}
+
+\title{ブラウン運動}
+\author{実験者: \varNAME \\ 共同実験者: 共同実験者名}
 \date{提出日: \today}
-\teacher{教員名}
-\experimentNumber{番号}
-\dayGroup{曜日・組}
-\experimentDate{実験日}
-\experimentSession{実験回}
+\teacher{\varTEACHER}
+\experimentNumber{\varEXPNUMBER}
+\dayGroup{火曜}
+\experimentDate{2024年4月16日}
+\experimentSession{B1ブラウン運動}
 \submissionDate{\today}
 
 % Add University, Department, Major in environment variable if you want to use
@@ -24,8 +26,13 @@
 \maketitle
 
 
-\subfile{src/sections/intro/intro}
-\subfile{src/sections/method/method}
+% \subfile{src/sections/intro/intro}
+% \subfile{src/sections/principle/principle}
+% \subfile{src/sections/method/method}
 
+\subfile{src/sections/report/report}
+
+\clearpage
+\printbibliography
 
 \end{document}
