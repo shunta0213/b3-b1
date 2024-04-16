@@ -1,0 +1,43 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
+  },
+  // TeX Configs
+  "[tex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "latex-workshop.latex.recipe.default": "lualatex",
+  "latex-workshop.bibtex-format.sort.enabled": true,
+  "latex-workshop.bibtex-format.align-equal.enabled": true,
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "lualatex",
+      "tools": ["lualatex"]
+    }
+  ],
+  "latex-workshop.latex.outDir": "%DIR%/dist",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "lualatex",
+      "command": "lualatex",
+      "args": [
+        "--cmdx",
+        "-file-line-error",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-output-directory=%OUTDIR%",
+        "%DOC%"
+      ]
+    }
+  ]
+}
