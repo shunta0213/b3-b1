@@ -5,6 +5,12 @@ node_modules
 # output dir
 dist
 
+# venv
+venv
+
+# os
+.DS_Store
+
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
